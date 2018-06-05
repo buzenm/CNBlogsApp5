@@ -98,6 +98,38 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MyClass\Author.cs" />
+    <Compile Include="MyClass\Entry.cs" />
+    <Compile Include="MyClass\Feed.cs" />
+    <Compile Include="MyClass\Function.cs" />
+    <Compile Include="MyClass\Link.cs" />
+    <Compile Include="MyClass\NewsBody.cs" />
+    <Compile Include="MyClass\BlogEntry.cs" />
+    <Compile Include="MyClass\Post.cs" />
+    <Compile Include="MyPage\MyBlogPage\BlogCommentPage.xaml.cs">
+      <DependentUpon>BlogCommentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyPage\MyBlogPage\BlogContentPage.xaml.cs">
+      <DependentUpon>BlogContentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyPage\MyBlogPage\BlogListViewPage.xaml.cs">
+      <DependentUpon>BlogListViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyPage\MyNewsPage\NewsCommentsPage.xaml.cs">
+      <DependentUpon>NewsCommentsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyPage\MyNewsPage\NewsContentPage.xaml.cs">
+      <DependentUpon>NewsContentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyPage\MyNewsPage\NewsListViewPage.xaml.cs">
+      <DependentUpon>NewsListViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyPage\OneToTwoPage.xaml.cs">
+      <DependentUpon>OneToTwoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyPage\PanePage.xaml.cs">
+      <DependentUpon>PanePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -125,12 +157,48 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="MyPage\MyBlogPage\BlogCommentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyPage\MyBlogPage\BlogContentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyPage\MyBlogPage\BlogListViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyPage\MyNewsPage\NewsCommentsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyPage\MyNewsPage\NewsContentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyPage\MyNewsPage\NewsListViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyPage\OneToTwoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyPage\PanePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.Net.Http">
+      <Version>2.2.29</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.0.8</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

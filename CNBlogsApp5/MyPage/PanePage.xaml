@@ -1,0 +1,109 @@
+﻿<Page
+    x:Class="CNBlogsApp5.MyPage.PanePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CNBlogsApp5.MyPage"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <RelativePanel>
+            <Button Name="HamburgerButton"
+                    FontFamily="Segoe MDL2 Assets"
+                    FontSize="27"
+                    Content=""
+                    Click="HamburgerButton_Click"
+                    ></Button>
+            <ListView Name="MainListView" 
+                      SelectionChanged="MainListView_SelectionChanged"
+                      ItemClick="MainListView_ItemClick"
+                      SelectedIndex="0">
+                <ListViewItem Name="NewsListViewItem" 
+                                      Width="120"
+                                      Margin="0,0,0,10">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock  FontFamily="Segoe MDL2 Assets"
+                                            Text=""
+                                            VerticalAlignment="Center"
+                                            FontSize="27"></TextBlock>
+                        <TextBlock Text="新闻"
+                                           FontSize="25"
+                                           Margin="10,0,0,5"></TextBlock>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem 
+                            Name="BlogListViewItem"
+                            Margin="0,0,0,10">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock  FontFamily="Segoe MDL2 Assets"
+                                            Text=""
+                                            VerticalAlignment="Center"
+                                            FontSize="27"></TextBlock>
+                        <TextBlock Text="博客"
+                                           FontSize="25"
+                                           Margin="10,0,0,5"></TextBlock>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem Name="MineListViewItem"
+                              Margin="0,0,0,10">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock
+                                            FontFamily="Segoe MDL2 Assets"
+                                            Text=""
+                                            FontSize="27"
+                                            VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Text="我" 
+                                           FontSize="25"
+                                           Margin="10,0,0,5"></TextBlock>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem Name="SettingListViewItem"
+                            Margin="0,0,0,10">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock  FontFamily="Segoe MDL2 Assets"
+                                            Text=""
+                                            FontSize="27"
+                                            VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Text="设置" 
+                                           FontSize="25"
+                                           Margin="10,0,0,5"
+                                           >
+                        </TextBlock>
+                    </StackPanel>
+                </ListViewItem>
+            </ListView>
+        </RelativePanel>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="Phone">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="HamburgerButton.(RelativePanel.AlignBottomWithPanel)" Value="True"/>
+                        <Setter Target="MainListView.(RelativePanel.Above)" Value="HamburgerButton"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Tablet">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="320"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="HamburgerButton.(RelativePanel.AlignTopWithPanel)" Value="True"/>
+                        <Setter Target="MainListView.(RelativePanel.Below)" Value="HamburgerButton"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Desktop">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="640"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="HamburgerButton.(RelativePanel.AlignTopWithPanel)" Value="True"/>
+                        <Setter Target="MainListView.(RelativePanel.Below)" Value="HamburgerButton"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+    </Grid>
+</Page>

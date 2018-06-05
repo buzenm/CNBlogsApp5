@@ -1,0 +1,25 @@
+﻿<Page
+    x:Class="CNBlogsApp5.MyPage.MyNewsPage.NewsCommentsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CNBlogsApp5.MyPage.MyNewsPage"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:CNBlogsApp5.MyClass"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ListView ItemsSource="{x:Bind posts}">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="data:Post">
+                    <StackPanel Orientation="Vertical" 
+                                Margin="0,0,0,10">
+                        <TextBlock Text="{x:Bind author.Name}"></TextBlock>
+                        <TextBlock Text="{x:Bind content}" TextWrapping="Wrap"></TextBlock>
+                        <TextBlock Text="{x:Bind published}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
